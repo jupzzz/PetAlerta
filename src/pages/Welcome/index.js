@@ -10,20 +10,25 @@ import {
 
 export default function Welcome() {
     return (
-    <View>
-        <Image 
-        source={require('../../assets/logo.png')}
-        style={styles.logo} 
-        resizeMode='cover'
-        />
+        <View style={styles.container}>
 
-      <Text>Bem vindo ao</Text>
-      <Text>PetAlerta</Text>
-    
-      <TouchableOpacity style={styles.button} onPress={() => alert('Botão pressionado!')}>
-        <Text style={styles.buttonText}>Comece aqui</Text>
-      </TouchableOpacity>
-    </View>
+            <View styles={styles.logo}>
+                <Image
+                    source={require('../../assets/logo.png')}
+                    style={{ width: '100%' }}
+                    resizeMode='contain'
+                />
+            </View>
+
+            <View styles={styles.container2}>
+                <Text style={styles.title}>Bem vindo ao</Text>
+                <Text style={styles.subtitle}>PetAlerta</Text>
+            
+                <TouchableOpacity style={styles.button} onPress={() => alert('Botão pressionado!')}>
+                    <Text style={styles.buttonText}>Comece aqui</Text>
+                </TouchableOpacity>
+            </View>
+        </View>
     )
 }
 
@@ -33,13 +38,9 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#7BB0EF",
-        justifyContent: 'center',
-        alignItems: 'center',
     },
 
     logo: {
-        width: width * 0.6,
-        height: height * 0.35,
         borderRadius: 10
     },
 
