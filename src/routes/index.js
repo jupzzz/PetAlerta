@@ -14,11 +14,11 @@ export default function Routes(){
             options={{ headerShown: false }}
             />
 
-            {/* <Stack.Screen 
+            <Stack.Screen 
             name="SignIn"
             component={SignIn}
             options={{ headerShown: false }}
-            /> */}
+            />
         </Stack.Navigator>
     )
 }

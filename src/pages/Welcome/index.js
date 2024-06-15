@@ -1,73 +1,97 @@
 import React from 'react';
-import { 
-    View, 
-    Text, 
+import {
+    View,
+    Text,
     Image,
     StyleSheet,
     Dimensions,
     TouchableOpacity
-    } from 'react-native';
+} from 'react-native';
+
+import * as Animatable from 'react-native-animatable'
+
+import { useNavigation } from '@react-navigation/native'
 
 export default function Welcome() {
+    const navigation = useNavigation();
+
     return (
         <View style={styles.container}>
 
-            <View styles={styles.logo}>
-                <Image
+            <View style={styles.containerLogo}>
+                <Animatable.Image
+                    animation="fadeInDown"
                     source={require('../../assets/logo.png')}
-                    style={{ width: '100%' }}
+                    style={styles.logo}
                     resizeMode='contain'
                 />
             </View>
 
-            <View styles={styles.container2}>
+            <Animatable.View delay={600} animation="fadeInUp" style={styles.containerText}>
                 <Text style={styles.title}>Bem vindo ao</Text>
                 <Text style={styles.subtitle}>PetAlerta</Text>
-            
-                <TouchableOpacity style={styles.button} onPress={() => alert('Botão pressionado!')}>
-                    <Text style={styles.buttonText}>Comece aqui</Text>
-                </TouchableOpacity>
-            </View>
+            </Animatable.View>
+
+            <TouchableOpacity
+                style={styles.button} 
+                onPress={() => navigation.navigate('SignIn')}>
+                <Text style={styles.buttonText}>Comece aqui</Text>
+            </TouchableOpacity>
         </View>
     )
 }
 
-const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#7BB0EF",
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: '20',
+    },
+
+    containerLogo: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 
     logo: {
-        borderRadius: 10
+        width: 200,
+        height: 200,
+        borderRadius: 50,
+    },
+
+    containerText: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        margimBottom: '60'
     },
 
     title: {
         fontSize: 24,
         fontWeight: 'bold',
         color: 'white',
-        marginTop: 20,
-        fontFamily: 'benne'
+        fontFamily: 'benne',
+        marginBottom: 20,
     },
 
     subtitle: {
         fontSize: 60,
         color: 'white',
-        marginBottom: 20,
         textAlign: 'center',
         fontFamily: 'benne'
     },
 
     button: {
-        position: 'absolute',
-        bottom: 30,
         backgroundColor: 'white',
         padding: 10,
         borderRadius: 20,
         paddingVertical: 10,
         paddingHorizontal: 50,
+        marginBottom: 50,
     },
 
     buttonText: {
