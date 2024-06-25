@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     View,
     Text,
     StyleSheet,
     TouchableOpacity,
     TextInput,
+    Alert,
 } from 'react-native';
 
 import * as Animatable from 'react-native-animatable'
@@ -13,6 +14,18 @@ import { useNavigation } from '@react-navigation/native'
 
 export default function SignIn() {
     const navigation = useNavigation();
+
+    const[email, setEmail] = useState('');
+    const[password, setPassword] = useState('');
+
+    const handleLogin = () => {
+        if (email === 'julia@' && password === '123') {
+            navigation.navigate('MainPage');
+        } else {
+            Alert.alert('Erro', 'Email ou senha incorretos');
+        }
+    }
+
     return (
         <View style={styles.container}>
 
@@ -34,15 +47,20 @@ export default function SignIn() {
                     <TextInput
                         placeholder='Digite seu email'
                         style={styles.input}
+                        value={email}
+                        onChangeText={setEmail}
                     />
 
                     <Text style={styles.title}>Senha</Text>
                     <TextInput
                         placeholder='Digite sua senha'
                         style={styles.input}
+                        value={password}
+                        onChangeText={setPassword}
+                        secureTextEntry
                     />
 
-                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Welcome')}>
+                    <TouchableOpacity style={styles.button} onPress={handleLogin}>
                         <Text style={styles.buttonText}>Entrar</Text>
                     </TouchableOpacity>
 
