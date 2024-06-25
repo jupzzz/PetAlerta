@@ -66,7 +66,7 @@ export default function SignIn() {
 
                     <View style={styles.buttonRegisterRow}>
                         <Text style={styles.buttonRegisterText}>Não possui uma conta?</Text>
-                        <TouchableOpacity onPress={() => navigation.navigate('Welcome')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Register')}>
                             <Text style={styles.buttonRegisterOther}> Registre-se</Text>
                         </TouchableOpacity>
                     </View>
@@ -102,7 +102,6 @@ const styles = StyleSheet.create({
 
     profileImage: {
         alignItems: 'center',
-        marginBottom: 20,
         alignItems: 'center'
     },
 
@@ -129,7 +128,7 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 16,
         color: '#333',
-        
+        marginTop: 10
     },
 
     input: {
@@ -185,7 +184,7 @@ const styles = StyleSheet.create({
     },
 
     buttonRegisterRow: {
-        flexDirection: 'row', // Arrange elements in a row
+        flexDirection: 'row', 
         justifyContent: 'center',
     }
 })
