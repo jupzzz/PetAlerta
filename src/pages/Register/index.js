@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
     View,
@@ -16,6 +16,12 @@ import { useNavigation } from '@react-navigation/native'
 
 export default function Register() {
     const navigation = useNavigation();
+
+    // const [name, setName] = useState('');
+    // const [phone, setPhone] = useState('');
+    // const [email, setEmail] = useState('');
+    // const [createPassword, setCreatePassword] = useState('');
+    // const [confirmPassword, setConfirmPassword] = useState('');
 
     return (
         <View style={styles.container}>
@@ -45,24 +51,24 @@ export default function Register() {
                         <TextInput
                             placeholder='Digite o seu email'
                             style={styles.input}
-                        //  value={email}
-                        //  onChangeText={setEmail}
+                        // value={email}
+                        // onChangeText={setEmail}
                         />
 
                         <Text style={styles.title}>Celular</Text>
                         <TextInput
                             placeholder='Digite o seu celular'
                             style={styles.input}
-                            // value={phone}
-                            // onChangeText={setPhone}
+                        // value={phone}
+                        // onChangeText={setPhone}
                         />
 
                         <Text style={styles.title}>Senha</Text>
                         <TextInput
                             placeholder='Crie uma senha'
                             style={styles.input}
-                        // value={createPassword}
-                        // onChangeText={setcreatePassword}
+                            // value={createPassword}
+                        // onChangeText={setCreatePassword}
                         // secureTextEntry
                         />
 
@@ -70,18 +76,18 @@ export default function Register() {
                         <TextInput
                             placeholder='Confirme a sua senha'
                             style={styles.input}
-                        // value={confirmPassword}
+                            // value={confirmPassword}
                         // onChangeText={setConfirmPassword}
                         // secureTextEntry
                         />
 
-                        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Welcome')}>
+                        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('SignIn')}>
                             <Text style={styles.buttonText}>Criar sua conta</Text>
                         </TouchableOpacity>
 
                         <View style={styles.buttonRegisterRow}>
                             <Text style={styles.buttonRegisterText}>Se já possui conta,</Text>
-                            <TouchableOpacity onPress={() => navigation.navigate('MainPage')}>
+                            <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
                                 <Text style={styles.buttonRegisterOther}> login</Text>
                             </TouchableOpacity>
                         </View>
