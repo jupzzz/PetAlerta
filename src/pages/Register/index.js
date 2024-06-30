@@ -17,12 +17,6 @@ import { useNavigation } from '@react-navigation/native'
 export default function Register() {
     const navigation = useNavigation();
 
-    // const [name, setName] = useState('');
-    // const [phone, setPhone] = useState('');
-    // const [email, setEmail] = useState('');
-    // const [createPassword, setCreatePassword] = useState('');
-    // const [confirmPassword, setConfirmPassword] = useState('');
-
     return (
         <View style={styles.container}>
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -81,7 +75,7 @@ export default function Register() {
                         // secureTextEntry
                         />
 
-                        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('SignIn')}>
+                        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('MainPage')}>
                             <Text style={styles.buttonText}>Criar sua conta</Text>
                         </TouchableOpacity>
 

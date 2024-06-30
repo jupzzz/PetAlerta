@@ -16,9 +16,9 @@ export default function Welcome() {
 
     return (
         <View style={styles.container}>
-            <Animatable.View animation="fadeInLeft" style={styles.containerHeader}>
-                <Text style={styles.text}>MainPage</Text>
-            </Animatable.View>
+            <View style={styles.containerHeader}>
+                <Text style={styles.text}>Selecione a sua localização:</Text>
+            </View>
         </View>
     )
 }
